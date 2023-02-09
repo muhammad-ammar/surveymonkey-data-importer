@@ -12,10 +12,12 @@ logging.basicConfig(format='%(asctime)s %(name)-12s %(levelname)-8s %(message)s'
 LOGGER.setLevel(logging.INFO)
 
 
+# This schema can be generated based on https://api.surveymonkey.com/v3/surveys/<survey_id>/responses/bulk
 SURVEY_SCHEMAS = [
     {
-        "id": 510805768,
+        "id": SURVEY_ID,  # add your survey id
         "title": "Programming Trends in 2023",
+        # each key in below dict is a question id and can be taken from ["data"]["pages"][0]["questions]
         "question_transformers": {
             "116254887": "question1",
             "116259286": "question2",
